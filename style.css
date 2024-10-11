@@ -48,3 +48,23 @@
     font-family: indivisaBlack;
     font-size: 1.5rem;
 }
+
+#map-container {
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+#map-image {
+    width: 1000px; /* Ajustar tamaño según el mapa */
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 1s ease; /* Suavizado de animación */
+}
+
+button {
+    margin: 10px;
+}
