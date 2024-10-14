@@ -2,6 +2,128 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
 
+/* BASICS */
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    border-collapse: collapse;
+    box-sizing: border-box;
+}
+body{
+    font-size: 1rem;
+    font-family: indivisaRegular;
+}
+h1{
+    font-family: indivisaBold;
+    font-size: 1.8rem;
+}
+h3{
+    font-family: indivisaBold;
+    font-size: 1.5rem;
+}
+
+#main-frame{
+    padding: 40px 40px;
+}
+
+#logo{
+    width: 180px;    
+}
+
+/* PARKING BUTTONS */
+#buttons-section{
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    margin-top: 10px;
+}
+
+.parking-btn{
+    padding: 5px 20px;
+    border: none;
+    border-radius: 20px;
+    margin-right: 10px;
+    margin-left: 0px;
+    opacity: 0.7;
+    transition: all 1s ease;
+}
+.parking-btn:hover{
+    opacity: 1;
+}
+
+/* MAP SECTION */
+#container-map{
+    background-color: white;
+    border: #001440;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#map-image{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    transition: transform 1s ease;
+}
+
+/* INFO SECTION */
+.info-text{
+    font-size: 1.2rem;
+    display: inline;
+}
+
+#disponibilidad-circle{
+    /* background-color: #D30D3C; */
+    background-color: orange;
+    display: inline;
+    padding: 0px 20px;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+#info-parking a{
+    padding: 10px 30px;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.7s ease;
+}
+#info-parking a:hover{
+    background-color: #CB022E;
+    color: white;
+}
+
+/* COLORS */
+.bg-main{
+    background-color: #001440;
+    color: white;
+}
+.bg-second{
+    background-color: #f4f5f7;
+    color: #001440;
+}
+
+@media (max-width: 575px) {
+    .bg-main{
+        background-color: #f4f5f7;
+        color: #001440;
+    }
+    .bg-second{
+        background-color: #001440;
+        color: white;
+    }
+    #logo{
+        content: url('images/logo.png');
+    }
+}
+
 /* FONTS */
 @font-face {
     font-family: indivisaThin;
@@ -26,125 +148,4 @@
 @font-face {
     font-family: indivisaBlack;
     src: url(fonts/indivisa_text_sans-black.woff2);
-}
-
-.thin {
-    font-family: indivisaThin;
-    font-size: 1.5rem;
-}
-.light {
-    font-family: indivisaLight;
-    font-size: 1.5rem;
-}
-.regular {
-    font-family: indivisaRegular;
-    font-size: 1.5rem;
-}
-.bold {
-    font-family: indivisaBold;
-    font-size: 1.5rem;
-}
-.black {
-    font-family: indivisaBlack;
-    font-size: 1.5rem;
-}
-
-*{
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    border: 0;
-    border-collapse: collapse;
-    box-sizing: border-box;
-}
-body{
-    font-size: 1rem;
-    font-family: indivisaRegular;
-}
-h1{
-    font-family: indivisaBold;
-    font-size: 1.8rem;
-}
-h3{
-    font-family: indivisaBold;
-    font-size: 1.5rem;
-}
-
-.bg-main{
-    background-color: #001440;
-    color: white;
-}
-.bg-second{
-    background-color: #f4f5f7;
-    color: #001440;
-}
-
-@media (max-width: 575px) {
-    .bg-main{
-        background-color: #f4f5f7;
-        color: #001440;
-    }
-    .bg-second{
-        background-color: #001440;
-        color: white;
-    }
-    #logo{
-        content: url('images/logo.png');
-    }
-  }
-
-#main-frame{
-    padding: 40px 30px;
-}
-
-#logo{
-    width: 180px;    
-}
-
-#buttons-section{
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    white-space: nowrap;
-    margin-top: 10px;
-}
-
-#buttons-section button{
-    padding: 5px 20px;
-    border: none;
-    border-radius: 20px;
-    margin-right: 10px;
-    margin-left: 0px;
-}
-
-#container-map{
-    background-color: white;
-    border: #001440;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    padding: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-#map-image{
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    top: 0;
-    left: 0;
-    transition: transform 1s ease;
-}
-
-.info-text{
-    font-size: 1.2rem;
-    display: inline;
-}
-
-#disponibilidad-circle{
-    background-color: #D30D3C;
-    color: #D30D3C;
-    display: inline;
-    padding: 0px 20px;
-    border-radius: 10px;
-    margin-left: 20px;
 }
