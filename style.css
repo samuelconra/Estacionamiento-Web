@@ -49,33 +49,102 @@
     font-size: 1.5rem;
 }
 
-#map-container {
-    width: 600px;
-    height: 400px;
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    border-collapse: collapse;
+    box-sizing: border-box;
+}
+body{
+    font-size: 1rem;
+    font-family: indivisaRegular;
+}
+h1{
+    font-family: indivisaBold;
+    font-size: 1.8rem;
+}
+h3{
+    font-family: indivisaBold;
+    font-size: 1.5rem;
+}
+
+.bg-main{
+    background-color: #001440;
+    color: white;
+}
+.bg-second{
+    background-color: #f4f5f7;
+    color: #001440;
+}
+
+@media (max-width: 575px) {
+    .bg-main{
+        background-color: #f4f5f7;
+        color: #001440;
+    }
+    .bg-second{
+        background-color: #001440;
+        color: white;
+    }
+    #logo{
+        content: url('images/logo.png');
+    }
+  }
+
+#main-frame{
+    padding: 40px 30px;
+}
+
+#logo{
+    width: 180px;    
+}
+
+#buttons-section{
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    margin-top: 10px;
+}
+
+#buttons-section button{
+    padding: 5px 20px;
+    border: none;
+    border-radius: 20px;
+    margin-right: 10px;
+    margin-left: 0px;
+}
+
+#container-map{
     background-color: white;
+    border: #001440;
+    border-radius: 20px;
     overflow: hidden;
     position: relative;
-    margin: auto;
-    border-radius: 10px;
+    padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
-#map-image {
-    width: 1000px; /* Ajustar tamaño según el mapa */
+#map-image{
+    width: 100%;
     height: auto;
-    position: absolute;
+    object-fit: cover;
     top: 0;
     left: 0;
-    transition: transform 1s ease; /* Suavizado de animación */
+    transition: transform 1s ease;
 }
 
-button {
-    margin: 10px;
-    padding: 6px 15px;
-    border-radius: 10px;
-    border: none;;
-    transition: all 1s ease;
+.info-text{
+    font-size: 1.2rem;
+    display: inline;
 }
-button:hover {
-    background-color: lightcoral;
+
+#disponibilidad-circle{
+    background-color: #D30D3C;
+    color: #D30D3C;
+    display: inline;
+    padding: 0px 20px;
+    border-radius: 10px;
+    margin-left: 20px;
 }
