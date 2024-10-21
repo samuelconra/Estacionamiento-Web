@@ -182,3 +182,58 @@ h3{
     font-family: indivisaBlack;
     src: url(fonts/indivisa_text_sans-black.woff2);
 }
+
+
+/* STYLE PARA PÁGINA DE AÑADIR COCHES */
+.div-estacionamiento{
+    position: relative;
+    background-color: #001440;
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+    height: 280px;
+}
+.btn-modify{
+    padding: 3px 10px;
+    margin: 0 10px;
+    border-radius: 10px;
+    transition: all 1s ease;
+}
+.btn-modify:hover{
+    background-color: white;
+}
+
+.icon-car{
+    color: white;
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+}
+.info-parking-cars{
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+}
+.info-parking-capacity{
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+.parking-name{
+    margin: 0;
+    padding: 0;
+    opacity: 0.8;
+}
+.parking-entry{
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+}
+.input_cars{
+    text-align: center;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 50px;
+    border-radius: 10px;
+    background-color: #dddddd;
+    display: block;
+}
