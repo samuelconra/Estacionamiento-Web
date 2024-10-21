@@ -16,13 +16,17 @@ function createButton(id, entry, color) {
     return htmlButton;
 }
 
-function createInfoSection(name, entry, link, id){
+function createInfoSection(name, entry, link, id, cars, capacity){
     if (window.matchMedia("(max-width: 575px)").matches) 
     {
         var htmlSection = `
             <h3>${entry} - ${name}</h3>
             <p class="info-text"><i class="fa-solid fa-circle-check pe-2"></i>Disponibilidad</p>
             <p id="disponibilidad-circle"></p>
+            <div>
+                <p class="icon-availability"><i class="fa-solid fa-car"></i></p>
+                <p class="text-availability">Lugares Disponibles: ${capacity - cars}</p>
+            </div>
             <div class="d-block text-end mt-3">
                 <a class="bg-second" href="${link}" target="_blank">Ver Ruta</a>
             </div>
@@ -34,6 +38,10 @@ function createInfoSection(name, entry, link, id){
             <img src="images/accesos_img/${id}_Image.png" alt="acceso" id="img-acceso">
             <p class="info-text"><i class="fa-solid fa-circle-check pe-2"></i>Disponibilidad</p>
             <p id="disponibilidad-circle"></p>
+            <div>
+                <p class="icon-availability"><i class="fa-solid fa-car"></i></p>
+                <p class="text-availability">Lugares Disponibles: ${capacity - cars}</p>
+            </div>
             <div class="d-block text-end mt-3">
                 <a class="bg-second" href="${link}" target="_blank">Ver Ruta</a>
             </div>
@@ -113,7 +121,7 @@ $('.parking-btn').on('click', async function () {
         }, 700);
         
         // Agregar info de estacionamiento
-        var info = createInfoSection(parkingSnap.data().name, parkingSnap.data().entry, parkingSnap.data().map, parkingSelectedId);
+        var info = createInfoSection(parkingSnap.data().name, parkingSnap.data().entry, parkingSnap.data().map, parkingSelectedId, parkingSnap.data().cars, parkingSnap.data().capacity);
         $("#info-parking").html(info);
     
         // Cambiar disponibilidad de estacionamiento

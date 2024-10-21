@@ -8,7 +8,7 @@ var parking_html = ''
 // FUNCIONES
 function createParkingSection(id, entry, name, cars, capacity) {
     var htmlSection = `
-    <div class="col-3 p-3 align-content-center">
+    <div class="col-lg-3 col-11 p-3 align-content-center">
         <div class="div-estacionamiento text-center align-content-center">
             <i class="fa-solid fa-car icon-car"></i>
             <h5 class="parking-entry">${entry}</h5>
