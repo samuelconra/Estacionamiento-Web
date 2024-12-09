@@ -33,12 +33,15 @@ async function addCards(){
     $('#parkings-modifiers').html(parking_html);
 }
 
-// FUNCIONALIDAD DE BOTONES
 $('.btn-modify').on('click', async function () {
-    var type = $(this).data('type')
-    var id = $(this).data('id')
-    var input = $('#input_cars_' +  id).val()
-    console.log(input)
+    var type = $(this).data('type');
+    var id = $(this).data('id');
+    var input = parseInt($('#input_cars_' + id).val(), 10); // Convertir a número entero
+
+    if (isNaN(input) || input < 0) {
+        console.log("El valor ingresado no es válido.");
+        return;
+    }
 
     const parkingRef = doc(db, 'Parking', id);
     const parkingDoc = await getDoc(parkingRef);
@@ -49,10 +52,9 @@ $('.btn-modify').on('click', async function () {
         // Determinar si se suma o resta
         let newCarsValue = type === 'add' ? currentCars + input : currentCars - input;
 
-        // Asegurarse de que el valor no sea negativo
+        // Asegurarse de que el valor no sea negativo y no supere la capacidad
         newCarsValue = Math.max(0, newCarsValue);
         newCarsValue = Math.min(parkingDoc.data().capacity, newCarsValue);
-
 
         // Actualizar el valor en Firestore
         await updateDoc(parkingRef, {
@@ -62,5 +64,5 @@ $('.btn-modify').on('click', async function () {
     } else {
         console.log("El documento no existe.");
     }
-    location.reload()
+    location.reload();
 });

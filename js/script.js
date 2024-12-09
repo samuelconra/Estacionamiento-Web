@@ -9,7 +9,7 @@ $("#info-parking").html(createBaseInfo());
 // FUNCIONES
 function createButton(id, entry, color) {
     var htmlButton = `
-    <button class="parking-btn bg-second" data-id="${id}" style="box-shadow: 0px 3px 0px 0px ${color};">
+    <button class="parking-btn bg-second" data-id="${id}" style="box-shadow: 0px 4px 0px 0px ${color};">
         ${entry}
     </button>
     `;
